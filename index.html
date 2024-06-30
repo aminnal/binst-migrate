@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>Binstarter Migration - One-Click Token Migration</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Convert old BSR to new BSR and stake them instantly for a smooth transition.">
+        <meta name="keywords" content="Binstarter, token migration, cryptocurrency, staking, smooth transition, rewards">
+        <meta name="author" content="Binstarter">
+        <meta name="email" content="angel@binstarter.io">
+        <meta name="csrf-token" content="N8eVeDp9-UDcY9D9EbFX7Q87zZTqryiAFDwA">
+        <meta name="version" content="Binstarter Renaissance V1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         
+        <!-- favicon -->
+        <link rel="shortcut icon" href="/assets/images/favicon.ico">
+
+        <!-- Css -->
+        <!-- Main Css -->
+        <script src="./index_files/a2nime.min.js"></script>
+
+      <script type="module" crossorigin src="/assets/index-DXXZjMDF.js"></script>
+      <link rel="stylesheet" crossorigin href="/assets/index-VphKeJ8r.css">
+    </head>
+    
+    <body class="font-nunito text-base text-black dark:text-white dark:bg-slate-900">
+        <!-- Loader Start -->
+        <div id="preloader" style="visibility: hidden; opacity: 0;">
+            <div id="status">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Loader End -->
+
+
+        <span class="fixed blur-[200px] lg:w-[600px] w-[400px] lg:h-[600px] h-[400px] rounded-full top-[10%] md:start-[10%] -start-[20%] bg-indigo-600/20"></span>
+        <span class="fixed blur-[200px] lg:w-[600px] w-[400px] lg:h-[600px] h-[400px] rounded-full bottom-[10%] md:end-[10%] -end-[20%] bg-red-600/20"></span>
+        
+        <!-- Start Navbar -->
+        <nav id="topnav" class="defaultscroll is-sticky">
+            <div class="container relative">
+                <!-- Logo container-->
+                <a class="logo" href="/">
+                    <img src="/assets/logo-dark-1Uw0ZzNy.png" class="inline-block dark:hidden" alt="">
+                    <img src="/assets/logo-light-CJQlHAvi.png" class="hidden dark:inline-block" alt="">
+                </a>
+
+                <!-- End Logo container-->
+                <div class="menu-extras">
+                    <div class="menu-item">
+                        <!-- Mobile menu toggle-->
+                        <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                        <!-- End mobile menu toggle-->
+                    </div>
+                </div>
+                
+            <!--Chain and Wallet buttons Start-->
+            <ul class="custom-buttons list-none mb-0">
+                <!-- Chain Selector Button -->
+                <li class="inline ps-1 mb-0">
+                    <a href="#" id="chainSelector" onclick="toggleChainDropdown()" class="custom-btn h-8 w-auto inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-full bg-indigo-600 hover:bg-indigo-700 border border-indigo-600 hover:border-indigo-700 text-white">
+                        <!-- Chain Icon -->
+                        <img id="networkIcon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAG3mlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNy4xLWMwMDAgNzkuYjBmOGJlOTAsIDIwMjEvMTIvMTUtMjE6MjU6MTUgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCAyMy4yIChNYWNpbnRvc2gpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyMy0xMC0zMFQwNToxODo1MCswMzowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAyMy0xMC0zMFQwNToxODo1MCswMzowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjMtMTAtMzBUMDU6MTg6NTArMDM6MDAiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjFhZTA0MDgtMTk0Yy00NmUzLThjZGQtZTkzZDE4NDIyNTE0IiB4bXBNTTpEb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6ZmI3ZTA3N2QtNThiMi05NjQ1LTlmYWEtNjY4OGRhOGFiNzQwIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6NzgwY2ZiNjUtMDdhMy00ZjA4LWE4MTQtMzdlODBlZjQ3ZmQ1IiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6NzgwY2ZiNjUtMDdhMy00ZjA4LWE4MTQtMzdlODBlZjQ3ZmQ1IiBzdEV2dDp3aGVuPSIyMDIzLTEwLTMwVDA1OjE4OjUwKzAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjMuMiAoTWFjaW50b3NoKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6MjFhZTA0MDgtMTk0Yy00NmUzLThjZGQtZTkzZDE4NDIyNTE0IiBzdEV2dDp3aGVuPSIyMDIzLTEwLTMwVDA1OjE4OjUwKzAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjMuMiAoTWFjaW50b3NoKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPHBob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPHJkZjpCYWc+IDxyZGY6bGk+M0NENUVDRkEwOENDQ0E0QTk3RUY3QzdBNkRCNzFGQjI8L3JkZjpsaT4gPHJkZjpsaT5hZG9iZTpkb2NpZDpwaG90b3Nob3A6NTRhYjdjYjItMmY2Ni1lNjRlLWIzM2YtNTA0YWIyYTk2Y2FlPC9yZGY6bGk+IDxyZGY6bGk+eG1wLmRpZDpjM2M1ZTgxMC03ODhlLTQ0YzktOGRiMC02MDhkNmU4YzIwYTc8L3JkZjpsaT4gPC9yZGY6QmFnPiA8L3Bob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+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" alt="Network Icon" class="h-5 w-5 ml-2">
+                    </a>                         
+                    <!-- Contents of the Chain Pop-up screen -->
+                    <div id="chainDropdown" class="popup-content fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-6 rounded hidden">
+                        <!-- Connect -->
+                        <div id="connectToHeader" class="mb-2">
+                            <span id="connectToText" class="text-495382">Connected with</span>
+                            <img id="popupNetworkIcon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAG3mlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNy4xLWMwMDAgNzkuYjBmOGJlOTAsIDIwMjEvMTIvMTUtMjE6MjU6MTUgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCAyMy4yIChNYWNpbnRvc2gpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyMy0xMC0zMFQwNToxODo1MCswMzowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAyMy0xMC0zMFQwNToxODo1MCswMzowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjMtMTAtMzBUMDU6MTg6NTArMDM6MDAiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjFhZTA0MDgtMTk0Yy00NmUzLThjZGQtZTkzZDE4NDIyNTE0IiB4bXBNTTpEb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6ZmI3ZTA3N2QtNThiMi05NjQ1LTlmYWEtNjY4OGRhOGFiNzQwIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6NzgwY2ZiNjUtMDdhMy00ZjA4LWE4MTQtMzdlODBlZjQ3ZmQ1IiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6NzgwY2ZiNjUtMDdhMy00ZjA4LWE4MTQtMzdlODBlZjQ3ZmQ1IiBzdEV2dDp3aGVuPSIyMDIzLTEwLTMwVDA1OjE4OjUwKzAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjMuMiAoTWFjaW50b3NoKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6MjFhZTA0MDgtMTk0Yy00NmUzLThjZGQtZTkzZDE4NDIyNTE0IiBzdEV2dDp3aGVuPSIyMDIzLTEwLTMwVDA1OjE4OjUwKzAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjMuMiAoTWFjaW50b3NoKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPHBob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPHJkZjpCYWc+IDxyZGY6bGk+M0NENUVDRkEwOENDQ0E0QTk3RUY3QzdBNkRCNzFGQjI8L3JkZjpsaT4gPHJkZjpsaT5hZG9iZTpkb2NpZDpwaG90b3Nob3A6NTRhYjdjYjItMmY2Ni1lNjRlLWIzM2YtNTA0YWIyYTk2Y2FlPC9yZGY6bGk+IDxyZGY6bGk+eG1wLmRpZDpjM2M1ZTgxMC03ODhlLTQ0YzktOGRiMC02MDhkNmU4YzIwYTc8L3JkZjpsaT4gPC9yZGY6QmFnPiA8L3Bob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+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" alt="Network Icon" class="h-5 w-5 ml-2">
+                            <span id="popupNetworkName" class="text-white">Binance Smart Chain</span>
+                        </div>
+                        <hr class="border-1c2649 mb-2">
+                        <span class="text-white">Networks</span>
+                        <hr class="border-1c2649 mt-2 mb-4">
+                    <a href="#" class="dropdown-item"><img src="/assets/eth-BagbGQys.png" class="chain-icon"><span class="chain-text">Ethereum</span></a><a href="https://binstarter.ai/migration#" class="dropdown-item"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAG3mlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNy4xLWMwMDAgNzkuYjBmOGJlOTAsIDIwMjEvMTIvMTUtMjE6MjU6MTUgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCAyMy4yIChNYWNpbnRvc2gpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyMy0xMC0zMFQwNToxODo1MCswMzowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAyMy0xMC0zMFQwNToxODo1MCswMzowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjMtMTAtMzBUMDU6MTg6NTArMDM6MDAiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjFhZTA0MDgtMTk0Yy00NmUzLThjZGQtZTkzZDE4NDIyNTE0IiB4bXBNTTpEb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6ZmI3ZTA3N2QtNThiMi05NjQ1LTlmYWEtNjY4OGRhOGFiNzQwIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6NzgwY2ZiNjUtMDdhMy00ZjA4LWE4MTQtMzdlODBlZjQ3ZmQ1IiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6NzgwY2ZiNjUtMDdhMy00ZjA4LWE4MTQtMzdlODBlZjQ3ZmQ1IiBzdEV2dDp3aGVuPSIyMDIzLTEwLTMwVDA1OjE4OjUwKzAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjMuMiAoTWFjaW50b3NoKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6MjFhZTA0MDgtMTk0Yy00NmUzLThjZGQtZTkzZDE4NDIyNTE0IiBzdEV2dDp3aGVuPSIyMDIzLTEwLTMwVDA1OjE4OjUwKzAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjMuMiAoTWFjaW50b3NoKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPHBob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPHJkZjpCYWc+IDxyZGY6bGk+M0NENUVDRkEwOENDQ0E0QTk3RUY3QzdBNkRCNzFGQjI8L3JkZjpsaT4gPHJkZjpsaT5hZG9iZTpkb2NpZDpwaG90b3Nob3A6NTRhYjdjYjItMmY2Ni1lNjRlLWIzM2YtNTA0YWIyYTk2Y2FlPC9yZGY6bGk+IDxyZGY6bGk+eG1wLmRpZDpjM2M1ZTgxMC03ODhlLTQ0YzktOGRiMC02MDhkNmU4YzIwYTc8L3JkZjpsaT4gPC9yZGY6QmFnPiA8L3Bob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+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" class="chain-icon"><span class="chain-text">Binance Smart Chain</span></a><a href="https://binstarter.ai/migration#" class="dropdown-item"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAG3mlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNy4xLWMwMDAgNzkuYjBmOGJlOTAsIDIwMjEvMTIvMTUtMjE6MjU6MTUgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCAyMy4yIChNYWNpbnRvc2gpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyMy0xMC0zMFQwNToxOTowMyswMzowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAyMy0xMC0zMFQwNToxOTowMyswMzowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjMtMTAtMzBUMDU6MTk6MDMrMDM6MDAiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MzVhODIzNzYtNzU4OC00NTc2LWE5YzYtZGQ3YmFiYjk0MGM0IiB4bXBNTTpEb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6ODkzNTc5ZmMtMjQ2My04MzQ5LWE5YmYtYmMwNWRiNzg2YWNkIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6N2UxYTk0YzItZDQ1MC00OTI4LThhOWEtZmU0ZDE1Zjk5N2I1IiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6N2UxYTk0YzItZDQ1MC00OTI4LThhOWEtZmU0ZDE1Zjk5N2I1IiBzdEV2dDp3aGVuPSIyMDIzLTEwLTMwVDA1OjE5OjAzKzAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjMuMiAoTWFjaW50b3NoKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6MzVhODIzNzYtNzU4OC00NTc2LWE5YzYtZGQ3YmFiYjk0MGM0IiBzdEV2dDp3aGVuPSIyMDIzLTEwLTMwVDA1OjE5OjAzKzAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjMuMiAoTWFjaW50b3NoKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPHBob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPHJkZjpCYWc+IDxyZGY6bGk+M0NENUVDRkEwOENDQ0E0QTk3RUY3QzdBNkRCNzFGQjI8L3JkZjpsaT4gPHJkZjpsaT5hZG9iZTpkb2NpZDpwaG90b3Nob3A6NTRhYjdjYjItMmY2Ni1lNjRlLWIzM2YtNTA0YWIyYTk2Y2FlPC9yZGY6bGk+IDxyZGY6bGk+eG1wLmRpZDpjM2M1ZTgxMC03ODhlLTQ0YzktOGRiMC02MDhkNmU4YzIwYTc8L3JkZjpsaT4gPC9yZGY6QmFnPiA8L3Bob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+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" class="chain-icon"><span class="chain-text">BSC Testnet</span></a><a href="https://binstarter.ai/migration#" class="dropdown-item"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAG3mlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNy4xLWMwMDAgNzkuYjBmOGJlOTAsIDIwMjEvMTIvMTUtMjE6MjU6MTUgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCAyMy4yIChNYWNpbnRvc2gpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyMy0xMC0zMFQwNToxODoyNSswMzowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAyMy0xMC0zMFQwNToxODoyNSswMzowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjMtMTAtMzBUMDU6MTg6MjUrMDM6MDAiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OGExYjA4NmEtZjVjZC00MzZjLWFiMWQtZDkxYThiNzk0MjExIiB4bXBNTTpEb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6ZWFhZjg4NjMtYWZjMS0zMTQ1LWIzODUtMTJhYjUwYzUyZGFlIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6YzBkZmIxODItYjJhYS00YWE3LWJlMmItZmI2YzVhZTVhOTMzIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6YzBkZmIxODItYjJhYS00YWE3LWJlMmItZmI2YzVhZTVhOTMzIiBzdEV2dDp3aGVuPSIyMDIzLTEwLTMwVDA1OjE4OjI1KzAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjMuMiAoTWFjaW50b3NoKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6OGExYjA4NmEtZjVjZC00MzZjLWFiMWQtZDkxYThiNzk0MjExIiBzdEV2dDp3aGVuPSIyMDIzLTEwLTMwVDA1OjE4OjI1KzAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjMuMiAoTWFjaW50b3NoKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPHBob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPHJkZjpCYWc+IDxyZGY6bGk+M0NENUVDRkEwOENDQ0E0QTk3RUY3QzdBNkRCNzFGQjI8L3JkZjpsaT4gPHJkZjpsaT5hZG9iZTpkb2NpZDpwaG90b3Nob3A6NTRhYjdjYjItMmY2Ni1lNjRlLWIzM2YtNTA0YWIyYTk2Y2FlPC9yZGY6bGk+IDxyZGY6bGk+eG1wLmRpZDpjM2M1ZTgxMC03ODhlLTQ0YzktOGRiMC02MDhkNmU4YzIwYTc8L3JkZjpsaT4gPC9yZGY6QmFnPiA8L3Bob3Rvc2hvcDpEb2N1bWVudEFuY2VzdG9ycz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7NU/G4AAAGhUlEQVR4nO2bf+heVR3HX9+1zWVrzsjfc7qF+YPUloJrSWOYLqlJKRoi/iBQIyxKc4iaBAZSoFmhMoNUhJFGkGWLNHUpzfljSRb5Iysp9rUtnbW56Tbdqz/Oc8fD03Ofc8597v3eZ/F9wwfu97nnfD7n8/7ec+7nfD7njqlMohxT2h7AqGOSoAgmCYpgkqAIJgmKoC6CjgJuB54HXgZ+ASytSXe7UIeRfdUb1H/bHyvVo4e00apU7TimnqO+WEJMN15Xr1Znte3sRBF0ovrrBGJ68bx6ZtsON0nQIer31DcrkNON+9QT2nY8VcY0utWYBlwEXAfMqWnpexO4CbgZeLUmnc0gwuAS9Ykhn5hB+Jt64UQ9DVWk7MYR6h3qO5kOb1a3ZfZRfVA9uUlHq0rvD+9Rr1Bfy3TwAfVT6hx1nnquuiZTx071ZsNa1zoxhXT/car6h0ynXlDPKlE+Rf2iujFT57i6tGnHU6W4WKRuzXBik/p1dXaCkfnqigzdqm+ox08EATEpLh7IGPw96gcrGDtNXZdhZ0UbhPRKcZEyDZ5QTxnS4F7q5YboOoZ1hoi9VYKKzerUSDRwPbAYeGjIqGI7If45CVgVaTsNGBvS3tAoCBoULf6QECS+VaPdF4HPAmsHtBmJZHks3bGN8PQ0gR3ADQ3prg0xgtZ3pCmsBTY3qH9oxAja2bD9HZRP3SrrT+1rVoygphfJsQE29krUMYcwVR8HngHuBE4YemQFOq+zsq3Fn9RpDb5G97V/iPGkenqk7wz1SvWfffpvU2+xhm3LqBE03nF6eqTfUtOyDOPqpQYy91iCigTcLerBkfYfMETyuXjaEMnvcQTtZ0jsfzzSbqZ6nfpqBXK6sVI9JmeMbRM0JaHNMvOzDIPwH/Va0zbarRcOdw24dyxwH/Az4EM12pxFCH7XAefGGscIkokP+ecC3wfWAGdk9Hsn0858YCXwS+DkskYxgmYktKkL+wBXAk8BlwEzE/utBS4EFhDin68Cz2XY/STwCKGAcPD/3HXwGrRdPTZxPakqY+r56p8z15L16sX2X8dmqld11pscvKKe3a0rRpDq/TaXlzlN/U2mE2+p3zYtCDzSUHzYlaF/u7rYHoI2RTrdZTxGyZFDDRnDnIGr/spQ2c21d6q6NsPOw0XfQsF4Qqf16iWmvZrLZJp6mbohY7Aawo1hy9bv6oz/Hwn2xu0h6EcZg33UkOTPHeAphj1WDl5Tl6vvrWCvTA4wzIhB2Fi0Lzodpf4rY+Db1e+oByYMaJ56q3nTaZfBiSrFgRSZqq4eYH+DPQShLlR/n+GEhsf1vJJBVK2LPW7XItmgLLH8n9aXINS91a+Y9zSpPmRYIw5TDzecHcqtrL6sXmSzW5tueZ/lL6dSggqZr95uKAfnYKt5BUjVLeqN6v4lY2lK9rF/LkkTCCpkkfpYpsM5+Ll6XGQMTclsy9+muwmKbSPWEOphFwB/yQjfY3gWWNaRZ2vUWztS9lm7gLuBhcC3gC1D2NsAXAssAu4f0G4W8CXggCFs1YMKj+Yx6k8rTKe71LkJ+s9Qn+v0ObTtKTaMgdPV3yUQs9q01/ZH1FVd/Tbb7FmhxgnCkAxfbtiG9OKv6hcMIf4gHXMMm8/ew6EjQVDKIc4UHAJcDHyUcEBhNaE+tSmh74PAJ/r8vgU4muYqu7OBF4D9+9zbSGf9i53qSMV64BsV+84q+b3pbGaS/rZz0lCeKp3ekaYwlYTq7SgQVIYZwIkN6l9ASPMOxCgTBPA1wkGqujGdUNmInj0YBYIGDfIk4F5gXo325hKqGQtTxjQKBL0duf8Z4Engy6Sf+OiHKcAlhCrIWZG2u+t1o0DQMwlt3g98l+BcTq2swGLgMWAFcFBC+7/vvmowEEuV48xPkaw07Rz1XEM28+1M/Z8rdLRNTiHLzE/SbVWvt/+HelMNx15yiwM71Gu6dbVNTLccrv7A/FLQS4Yi4UL1w4avh3JKPAVW2aek1DYp/WSJ+kgFBzWfXNU/OuCTrLr2Yk3g84Tz2Yc1pP8N4MaOlOa4RpkggP0Ir/crgHfXqPdu4JuEA+2DUXEaTLQsUH9SYfr04reG79qSbbfteK582mqnzV4xlLyzy+ajPsX6YW/gUuAq+udyurGTcBjrJqrmlUbgqagq8wxhQVkQuMrw6h/Kzp74BPXiY8By4HjC1ukl4Dbgx3Uo/38gqFGMwmZ1pDFJUASTBEUwSVAE/wUWjjnp/NhgtAAAAABJRU5ErkJggg==" class="chain-icon"><span class="chain-text">Polygon</span></a><a href="https://binstarter.ai/migration#" class="dropdown-item"><img src="/assets/avax-CRunex2Y.png" class="chain-icon"><span class="chain-text">Avalanche C-Chain</span></a></div>
+                </li>
+                
+                <!-- Wallet Connector Button -->
+                <li class="inline ps-1 mb-0">
+                    <a href="#" id="connectW" class="custom-btn h-8 w-auto inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-full bg-indigo-600 hover:bg-indigo-700 border border-indigo-600 hover:border-indigo-700 text-white">
+                        <div id="walletInfo">
+                            <span id="walletAddress">Connect</span>
+                            <span id="disconnectText" style="display: none;">&nbsp;Disconnect</span>
+                        </div>
+                    </a>                   
+            <!-- Contents of the Connect Pop-up Screen -->
+            <div id="connectDropdown" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white w-124 h-111 rounded shadow-lg hidden">
+                <div class="connect-header">
+                    <h2>Connect Wallet</h2>
+                    <p>Choose a wallet to connect</p>
+                </div>
+                <div class="wallet-option-container">
+                    <a id="metaMaskOption" class="wallet-option interactButton">
+                        <img src="/assets/MetaMask-logo-xxuiA6RA.png" alt="MetaMask Logo" class="wallet-logo">
+                        <div class="wallet-name">MetaMask</div>
+                       
+                    </a>
+                    <hr class="divider">
+                    <a id="trustWalletOption" class="wallet-option interactButton">
+                        <img src="/assets/Trust_Core Logo_Blue-C1VK6ngX.png" alt="TrustWallet Logo" class="wallet-logo">
+                        <div class="wallet-name">TrustWallet</div>
+                       
+                    </a>
+                    <hr class="divider">
+                    <a id="walletConnectOption" class="wallet-option interactButton">
+                        <img src="/assets/WalletConnect-Logo-D-4pcVmg.png" alt="WalletConnect Logo" class="wallet-logo">
+                        <div class="wallet-name">WalletConnect</div>
+                    </a>
+                </div>
+
+                    <div class="wallet-agreement">
+                        <p>By connecting your wallet you agree to our <br>Terms of Service and our Privacy Policy.</p>
+                    </div>
+            </div>
+
+                </li>
+            </ul>
+            <!--Chain and Wallet buttons End-->
+
+            <div id="popupOverlay" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden" onclick="toggleChainDropdown()"></div>
+
+                <div id="navigation">
+                    <!-- Navigation Menu-->   
+                    <ul class="navigation-menu">
+                        <li class="has-submenu parent-parent-menu-item">
+                            <a href="javascript:void(0)">Launchpad</a><span class="menu-arrow"></span>
+
+                            <ul class="submenu megamenu">
+                                <li>
+                                    <ul>
+                                        <li>
+                                            <a href="/launchpad" class="sub-menu-item">
+                                                <i class="fas fa-rocket me-2"></i> 
+                                                <span style="font-size: 1.0em;">Launchpad</span> 
+                                                <span class="bg-yellow-500 inline-block text-white text-[10px] font-bold px-2.5 py-0.5 rounded h-5 ms-1">IDO</span>
+                                            </a>
+                                            <p class="ms-5" style="margin-top: -5px; font-size: 0.8em; color: #6974af;">Discover the intricacies of IDOs on <br> Binstarter and learn how to participate.</p> 
+                                        </li>
+                                        <li>
+                                            <a href="/vesting" class="sub-menu-item">
+                                                <i class="fas fa-lock me-2"></i>
+                                                <span style="font-size: 1.0em;">Vesting</span> 
+                                                <span class="bg-yellow-500 inline-block text-white text-[10px] font-bold px-2.5 py-0.5 rounded h-5 ms-1">CLAIM</span>
+                                            </a>
+                                            <p class="ms-5" style="margin-top: -5px; font-size: 0.8em; color: #6974af;">Explore available vesting options <br> to match your eligibility.</p> 
+                                        </li>
+                                    </ul>
+                                </li>
+                                
+                                <li>
+                                    <ul>
+                                        <li>
+                                            <a href="/" class="sub-menu-item">
+                                                <i class="fas fa-book me-2"></i>
+                                                <span style="font-size: 1.0em;">Knowledge Hub</span> 
+                                            </a>
+                                            <p class="ms-5" style="margin-top: -5px; font-size: 0.8em; color: #6974af;">Access Helpful Documentation and<br> Resources for Binstarter.</p> 
+                                        </li>
+                                        <li>
+                                            <a href="/article/10-how-to-buy-bsr-from-pancakeswap" class="sub-menu-item">
+                                                <i class="fas fa-coins me-2"></i>
+                                                <span style="font-size: 1.0em;">Get BSR Tokens</span> 
+                                                <span class="bg-yellow-500 inline-block text-white text-[10px] font-bold px-2.5 py-0.5 rounded h-5 ms-1">Buy</span>
+                                            </a>
+                                            <p class="ms-5" style="margin-top: -5px; font-size: 0.8em; color: #6974af;">Explore available vesting options <br> to match your eligibility.</p> 
+                                        </li>
+                                    </ul>
+                                    </li><li>
+                                        <ul>
+                                            <li>
+                                                <a href="" class="sub-menu-item">
+                                                    <i class="fa-solid fa-user-graduate"></i>
+                                                    <span style="font-size: 1.0em;">How to Participate in IDOs?</span> 
+                                                </a>
+                                                <p class="ms-5" style="margin-top: -5px; font-size: 0.8em; color: #6974af;">Discover the Path to Engage in<br> Binstarter's Thrilling IDOs.</p> 
+                                                <a href="" class="button-navmenus">Read More</a> 
+                                            </li>
+                                            
+                                        </ul> 
+                                    </li>
+                                
+                            </ul>
+                        </li>
+                        
+                        <li class="has-submenu parent-parent-menu-item">
+                            <a href="javascript:void(0)">Stake</a><span class="menu-arrow"></span>
+
+                            <ul class="submenu megamenu">
+                                <li>
+                                    <ul>
+                                        <li>
+                                            <a href="/stake" class="sub-menu-item">
+                                                <i class="fas fa-rocket me-2"></i> 
+                                                <span style="font-size: 1.0em;">BSR Staking</span> 
+                                                <span class="bg-yellow-500 inline-block text-white text-[10px] font-bold px-2.5 py-0.5 rounded h-5 ms-1">EARN</span>
+                                            </a>
+                                            <p class="ms-5" style="margin-top: -5px; font-size: 0.8em; color: #6974af;">Maximize Your Gains by Staking <br> BSR in Our Ecosystem.</p> 
+                                        </li>
+                                        <li>
+                                            <a href="/migration#" class="sub-menu-item">
+                                                <i class="fas fa-lock me-2"></i>
+                                                <span style="font-size: 1.0em;">BSR Farming</span> 
+                                                <span class="bg-yellow-500 inline-block text-white text-[10px] font-bold px-2.5 py-0.5 rounded h-5 ms-1">SOON</span>
+                                            </a>
+                                            <p class="ms-5" style="margin-top: -5px; font-size: 0.8em; color: #6974af;">Explore Diverse Farming Pools and <br> Optimize Your Yield Strategy.</p> 
+                                        </li>
+                                    </ul>
+                                </li>
+                                
+                                <li>
+                                    <ul>
+                                        <li>
+                                            <a href="" class="sub-menu-item">
+                                                <i class="fas fa-book me-2"></i>
+                                                <span style="font-size: 1.0em;">Knowledge Hub</span> 
+                                            </a>
+                                            <p class="ms-5" style="margin-top: -5px; font-size: 0.8em; color: #6974af;">Access Helpful Documentation and<br> Resources for Binstarter.</p> 
+                                        </li>
+                                        <li>
+                                            <a href="" class="sub-menu-item">
+                                                <i class="fas fa-coins me-2"></i>
+                                                <span style="font-size: 1.0em;">Get BSR Tokens</span> 
+                                                <span class="bg-yellow-500 inline-block text-white text-[10px] font-bold px-2.5 py-0.5 rounded h-5 ms-1">Buy</span>
+                                            </a>
+                                            <p class="ms-5" style="margin-top: -5px; font-size: 0.8em; color: #6974af;">Explore available vesting options <br> to match your eligibility.</p> 
+                                        </li>
+                                    </ul>
+                                    </li><li>
+                                        <ul>
+                                            <li>
+                                                <a href="/article/18-binstarter-tier-system" class="sub-menu-item">
+                                                    <i class="fa-solid fa-user-graduate"></i>
+                                                    <span style="font-size: 1.0em;">Tier System</span> 
+                                                </a>
+                                                <p class="ms-5" style="margin-top: -5px; font-size: 0.8em; color: #6974af;">Learn About Our IDO Allocation<br> System Here.</p> 
+                                                <a href="" class="button-navmenus">Read More</a> 
+                                            </li>
+                                            
+                                        </ul> 
+                                    </li>
+                                
+                            </ul>
+                        </li> 
+                        <li><a href="/vesting" class="sub-menu-item">Vesting</a></li>
+                    </ul><!--end navigation menu-->
+                </div><!--end navigation-->
+            </div><!--end container-->
+        </nav><!--end header-->
+        <!-- End Navbar -->
+
+        <!-- Start Hero -->
+        <section class="relative table w-full lg:py-40 md:py-36 pt-36 pb-24 overflow-hidden bg-white dark:bg-slate-900">
+            <div class="absolute inset-0 bg-[url(&#39;../../assets/images/overlay.png&#39;)] bg-repeat opacity-10 dark:opacity-60"></div>
+            <div class="container relative z-1">
+                <div class="relative grid lg:grid-cols-12 grid-cols-1 items-center mt-10 gap-[30px]">
+                    <div class="lg:col-span-7">
+                        <div class="lg:me-6 lg:text-start text-center">
+                            <h1 class="font-bold lg:leading-normal leading-normal text-4xl lg:text-6xl mb-5">One-Click Token Migration <br>For <span class="typewrite bg-gradient-to-tl to-indigo-600 from-red-600 text-transparent bg-clip-text" data-period="2000" data-type="[ &quot;Seamless Transition&quot;, &quot;Instant Staking&quot;, &quot;a Smoother Experience&quot; ]"><span class="wrap">Instant S</span></span></h1>
+                            <p class="text-lg max-w-xl lg:ms-0 mx-auto">Convert old BSR to new BSR and stake them instantly for a smooth transition.</p>
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="lg:col-span-5">
+                        <video class="lg:max-w-none lg:ms-0" autoplay="" loop="" muted="" playsinline="" style="width: 560px;">
+                            <source src="/assets/mig-CWsNCce9.mp4" type="video/mp4">
+                        </video>
+                            <source src="/assets/mig-CWsNCce9.mp4" type="video/mp4">
+                        
+                    </div>
+                        </div>
+                    </div><!--end col-->
+                <!--end grid-->
+            <!--end container-->
+        </section><!--end section-->
+        <!-- End Hero -->
+
+                            <div class="outer-container">
+                                <div class="mig-container">
+                                    <div class="mig-card">
+                                        <h2 class="mig-title">One-Click Token Migration</h2>
+                                        <p class="mig-subtitle">Convert old BSR to new BSR and stake them instantly for a smooth transition.</p>
+                                        <div class="mig-swap-section">
+                                            <div class="mig-pay">
+                                                <div class="mig-pay-header">
+                                                    <p>PAY</p>
+                                                    <div class="mig-amount">
+                                                        <button class="mig-min">MIN</button>
+                                                        <button class="mig-max">MAX</button>
+                                                    </div>
+                                                </div>
+                                                <div class="mig-token-info">
+                                                    <img src="/assets/bsr-old-icon-4sj1GFJR.png" alt="BSR">
+                                                    <span>BSR</span>
+                                                    <input type="number" value="1000" min="0" class="mig-input-amount">
+                                                </div>
+                                            </div>
+                                            <div class="mig-receive">
+                                                <div class="mig-receive-header">
+                                                    <p>RECEIVE</p>
+                                                </div>
+                                                <div class="mig-token-info">
+                                                    <img src="/assets/bsr-new-icon-4ZnTKLD7.png" alt="BSR">
+                                                    <span>BSR</span>
+                                                    <span class="mig-static-amount">1000</span>
+                                                </div>
+                                            </div>
+                                            <button class="mig-approve-button interactButton">APPROVE</button>
+                                            <button class="mig-swap-stake-button interactButton">SWAP AND STAKE</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                                
+                            
+        <!-- Footer Start -->
+            <!-- Subscribe -->   
+            <footer class="footer bg-binstarter relative text-slate-400">
+            <section class="relative md:py-17 py-17">
+                    <div class="newsletter-container">
+                        <div class="newsletter-content">
+                            <div class="newsletter-text">
+                                <p class="newsletter-title">Never want to miss a sale?</p>
+                                <p class="newsletter-description">Sign up for our newsletter and get <br>the latest news and updates.</p>
+                            </div>
+                            <div class="newsletter-form">
+                                <div class="input-group">
+                                <input type="email" placeholder="E-mail address (*)" class="email-input">
+                                <button class="subscribe-button">Subscribe</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </section><!--end section--> 
+            <!-- Subscribe -->  
+        <!-- Footer L Start --> 
+        <footer class="footer bg-binstarter relative text-slate-400">
+            <div class="container relative text-center">
+                <div class="grid grid-cols-12">
+                    <div class="col-span-12">
+                        <div class="pb-[60px] px-0">
+                            <div class="grid md:grid-cols-12 grid-cols-1 gap-[30px]">
+                                <div class="lg:col-span-4 md:col-span-12 left-aligned-section">
+                                    <a href="/migration#" class="text-[22px] focus:outline-none">
+                                        <div class="footer-logo-container">
+                                        <img src="/assets/logo-dark-1Uw0ZzNy.png" class="block dark:hidden" alt="">
+                                        <img src="/assets/logo-light-CJQlHAvi.png" class="hidden dark:block" alt="">
+                                        </div>
+                                    </a>
+                                    <p class="mt-6">Where visionary projects and passionate communities align: Binstarter, your insured multichain gateway to premier IDOs.</p>
+                                    <ul class="list-none mt-6">
+                                        <li class="inline"><a href="https://twitter.com/BinStarterio" target="_blank" class="h-8 w-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center text-gray-400 hover:text-white border border-gray-100 dark:border-gray-800 rounded-md hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"><i class="uil uil-twitter align-middle" title="Twitter"></i></a></li>
+                                        <li class="inline"><a href="https://t.me/BinStarterOfficial" target="_blank" class="h-8 w-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center text-gray-400 hover:text-white border border-gray-100 dark:border-gray-800 rounded-md hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"><i class="uil uil-telegram" title="Telegram"></i></a></li>
+                                        <li class="inline"><a href="https://www.youtube.com/watch?v=s39li_NNVbg" target="_blank" class="h-8 w-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center text-gray-400 hover:text-white border border-gray-100 dark:border-gray-800 rounded-md hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"><i class="uil uil-youtube align-middle" title="Youtube"></i></a></li>
+                                        <li class="inline"><a href="https://docs.binstarter.io/" target="_blank" class="h-8 w-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center text-gray-400 hover:text-white border border-gray-100 dark:border-gray-800 rounded-md hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"><i class="uil uil-notes align-middle" title="Docs"></i></a></li>
+                                        <li class="inline"><a href="https://binstarter.medium.com/" target="_blank" class="h-8 w-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center text-gray-400 hover:text-white border border-gray-100 dark:border-gray-800 rounded-md hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"><i class="uil uil-medium-m align-middle" title="Medium"></i></a></li>
+                                        <li class="inline"><a href="https://blog.binstarter.io/" target="_blank" class="h-8 w-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center text-gray-400 hover:text-white border border-gray-100 dark:border-gray-800 rounded-md hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"><i class="uil uil-pen" title="Blog"></i></a></li>
+                                        <li class="inline"><a href="mailto:angel@binstarter.io" class="h-8 w-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center text-gray-400 hover:text-white border border-gray-100 dark:border-gray-800 rounded-md hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"><i class="uil uil-envelope align-middle" title="email"></i></a></li>
+                                    </ul><!--end icon-->    
+                                </div><!--end col-->
+                        
+                                <div class="lg:col-span-2 md:col-span-4">
+                                    <h5 class="tracking-[1px] text-black dark:text-white font-semibold">Product</h5>
+                                    <ul class="list-none footer-list mt-6">
+                                        <li><a href="/launchpad" class="text-slate-400 hover:text-slate-500 dark:text-slate-300 dark:hover:text-slate-400 duration-500 ease-in-out">Launchpad</a></li>
+                                        <li class="mt-[10px]"><a href="/stake" class="text-slate-400 hover:text-slate-500 dark:text-slate-300 dark:hover:text-slate-400 duration-500 ease-in-out">Stake</a></li>
+                                        <li class="mt-[10px]"><a href="/vesting" class="text-slate-400 hover:text-slate-500 dark:text-slate-300 dark:hover:text-slate-400 duration-500 ease-in-out">Vesting</a></li>
+                                        <li class="mt-[10px]"><a href="/migration" class="text-slate-400 hover:text-slate-500 dark:text-slate-300 dark:hover:text-slate-400 duration-500 ease-in-out">Migration</a></li>
+                                    </ul>
+                                </div><!--end col-->
+                                
+                        
+                                <div class="lg:col-span-2 md:col-span-4">
+                                    <h5 class="tracking-[1px] text-black dark:text-white font-semibold">Profile &amp; Resource</h5>
+                                    <ul class="list-none footer-list mt-6">
+                                        <li><a href="/profile" class="text-slate-400 hover:text-slate-500 dark:text-slate-300 dark:hover:text-slate-400 duration-500 ease-in-out">Profile</a></li>
+                                        <li class="mt-[10px]"><a href="https://blog.binstarter.io/" class="text-slate-400 hover:text-slate-500 dark:text-slate-300 dark:hover:text-slate-400 duration-500 ease-in-out">Blog</a></li>
+                                        <li class="mt-[10px]"><a href="/" class="text-slate-400 hover:text-slate-500 dark:text-slate-300 dark:hover:text-slate-400 duration-500 ease-in-out">Knowledge Hub</a></li>
+                                        <li class="mt-[10px]"><a href="https://docs.binstarter.io/press-kit/assets" class="text-slate-400 hover:text-slate-500 dark:text-slate-300 dark:hover:text-slate-400 duration-500 ease-in-out">Press Kit</a></li>
+                                        <li class="mt-[10px]"><a href="https://docs.binstarter.io/whitepaper/wp2" class="text-slate-400 hover:text-slate-500 dark:text-slate-300 dark:hover:text-slate-400 duration-500 ease-in-out">Whitepaper</a></li>
+                                    </ul>
+                                </div><!--end col-->
+    
+                                <div class="lg:col-span-3 md:col-span-4">
+                                    <h5 class="tracking-[1px] text-black dark:text-white font-semibold">Join Us!</h5>
+                                    <ul class="list-none footer-list mt-6">
+                                        <li>
+                                            <a href="" class="button apply-button">
+                                                <span class="icon-container-footer"><i class="icon-plus">+</i></span>
+                                                <span class="button-text">Apply as a Project</span>
+                                            </a>
+                                        </li>
+                                        <li class="mt-[10px]">
+                                            <a href="" class="button join-button">
+                                                <span class="icon-container-footer"><i class="icon-arrow">&gt;</i></span>
+                                                <span class="button-text">Join KOL Network</span>
+                                            </a>
+                                        </li>
+                                        <li class="mt-[10px]">
+                                            <a href="" class="button buy-bsr-button">
+                                                <span class="icon-container-footer"><i class="icon-arrow">$</i></span>
+                                                <span class="buy-button-text">Buy $BSR</span>
+                                            </a>
+                                        </li>
+                                    </ul>                                                                                                     
+                                </div><!--end col-->
+                            </div><!--end grid-->
+                        </div><!--end col-->
+                    </div>
+                </div><!--end grid-->
+            </div><!--end container-->
+
+            <div class="py-[30px] px-0 border-t border-gray-100 dark:border-slate-800">
+                <div class="container relative text-center">
+                    <div class="grid md:grid-cols-2 items-center">
+                        <div class="md:text-start text-center">
+                            <p class="mb-0">Copyright © 2024 Binstarter.
+                        </p></div>
+
+                        <ul class="list-none md:text-end text-center mt-6 md:mt-0">
+                            <li class="inline"><a href="/profile" title="Terms &amp; Conditions">Terms &amp; Conditions</a></li>
+                            <li class="inline"><a href="/profile" title=" ·  "> · </a></li>
+                            <li class="inline"><a href="/profile" title="Privacy Policy">Privacy Policy</a></li>
+                        </ul>                        
+                    </div><!--end grid-->
+                </div><!--end container-->
+            </div>
+        </footer><!--end footer-->
+        <!-- Footer End -->
+
+        <!-- Back to top -->
+        <a href="#" onclick="topFunction()" id="back-to-top" class="back-to-top fixed text-lg rounded-full z-10 bottom-5 end-5 h-9 w-9 text-center bg-indigo-600 text-white leading-9 hidden"><i class="uil uil-arrow-up"></i></a>
+        <!-- Back to top -->
+
+        <!-- JAVASCRIPTS -->
+        <script src="./index_files/tiny-slider.js"></script>
+        <script src="./index_files/feather.min.js"></script>
+        <script src="./index_files/index.a1021574.js"></script>
+        <script src="./index_files/index.a1011574.js"></script> 
+        <script src="./index_files/web3.min.js"></script>
+        <script src="./index_files/anime.min.js"></script>
+        <script src="./index_files/index.a1047537.js"></script>
+        <!-- JAVASCRIPTS -->
+    
+</footer>
+<style type="text/css">.typewrite > .wrap { border-right: 0.08em solid transparent}</style>
+
+</body>
+</html>
